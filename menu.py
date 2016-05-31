@@ -1,8 +1,10 @@
-import os
 import curses
 import glob, imp
+import os
+
 from os.path import join, basename, splitext
 from os import system
+
 
 def importPluginModulesIn(directory):
     modules = {}
@@ -11,8 +13,10 @@ def importPluginModulesIn(directory):
         modules[name] = imp.load_source(name, path)
     return modules
 
+
 def getPlugins():
     return importPluginModulesIn('stories')
+
 
 def getStories():
     plugins = getPlugins()
@@ -20,6 +24,7 @@ def getStories():
     for i, plugin in enumerate(plugins):
         choices[i + 1] = "{0}".format(plugin)
     return choices, plugins
+
 
 def addWord(text, word):
     # ~ adds tab
@@ -29,6 +34,7 @@ def addWord(text, word):
       new_word = word
     text += "{0} ".format(new_word)
     return text
+
 
 def formatLongString(text, padding):
     height, width = screen.getmaxyx()
@@ -50,9 +56,11 @@ def formatLongString(text, padding):
         line_text.append(current_line)
     return line_text
 
+
 def show_header(text):
     height, width = screen.getmaxyx()
     screen.addstr(0, ((width - len(text))/2), text)
+
 
 def display_page(pos_x, pos_y, main_text, choices, plugins, padding):
   height, width = screen.getmaxyx()
@@ -129,6 +137,7 @@ def display_page(pos_x, pos_y, main_text, choices, plugins, padding):
     screen.refresh()
       
   return choice_page
+
 
 def main():
   intro_text = "^ ^Please select a story to play:"
