@@ -1,8 +1,8 @@
 #!/user/bin/python
 import random
 import sys
-from stories._base_story2 import BaseStory
-from stories._base_story2 import Page
+from stories._base_story import BaseStory
+from stories._base_story import Page
 
 class Story(BaseStory):
 
