@@ -10,8 +10,7 @@ class Story(BaseStory):
     BaseStory.__init__(self)
     self.title = 'Zork - The Forces of Krill'
     self.intro = 'Welcome to the Kingdom of Zork!'
-    #self.character= {'points': 0} # Player can get a max of 10
-    
+
     # Make the Pages
     page_0 = Page('''
       Thanks for playing!
@@ -2040,14 +2039,6 @@ class Story(BaseStory):
         2: {'Quit': -1}},
        {})
     
-    
-    #page_ = Page('''
-
-    #''',
-    #   {1: {'': }, 
-    #    2: {'': }},
-    #   {})
-    
     self.pages = {0: page_0,
                   1: page_1,
                   9: page_9,
@@ -2081,7 +2072,7 @@ class Story(BaseStory):
                   90: page_90,
                   94: page_94,
                   95: page_95,
-		              98: page_98,
+		  98: page_98,
                   101: page_101,
                   103: page_103,
                   107: page_107,
