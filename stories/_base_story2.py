@@ -1,10 +1,13 @@
-import os
+
 import curses
-import sys
-import random
 import glob, imp
+import os
+import random
+import sys
+
 from os.path import join, basename, splitext
 from os import system   
+    
     
 class BaseStory(object):
 
@@ -13,9 +16,7 @@ class BaseStory(object):
     self.intro = ''
     self.base_page = Page()
     self.pages = {}
-    self.character = {
-                      'points': 0
-                     }
+    self.character = {'points': 0}
     self.dice_specifics = []
     self.dice_roll = 0
     
@@ -186,7 +187,8 @@ class BaseStory(object):
 
    
 class Page(object):
-  #images? text art?
+    
+    
   def __init__(self, text='', options={}, actions={}):
     self.actions = actions
     self.text = text
